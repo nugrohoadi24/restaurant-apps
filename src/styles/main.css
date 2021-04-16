@@ -46,6 +46,10 @@ h6,
     line-height: 1.2;
 }
 
+a {
+    text-decoration: none;
+}
+
 p {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -54,6 +58,7 @@ p {
 img {
     vertical-align: middle;
     border-style: none;
+    width: 100%;
 }
 
 .fixed-top {
@@ -126,7 +131,7 @@ img {
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
+    border-radius: 0.75rem;
 }
 
 .card:hover {
@@ -141,23 +146,70 @@ img {
 }
 
 .card-title {
-    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.card-rating {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: large;
+    background-color: #FF146A;
+    padding: 5px 15px 1px 15px;
+    border-bottom-left-radius: 0.75rem;
+    z-index: 1;
+    border-top-right-radius: 0.75rem;
+}
+
+.card-rating .fa {
+    font-size: smaller;
+    padding: 0.3em 0.8em 0.3em 0;
+    color: gold;
 }
 
 .card-description {
     margin-bottom: 0;
+    text-decoration: none;
+    color: #1e1e1e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .card img {
-    max-height: 250px;
+    max-height: 220px;
+}
+
+.top-1 {
+    margin-top: 1rem;
 }
 
 .top-2 {
     margin-top: 2rem;
 }
 
+.no-top {
+    margin-top: -1rem;
+}
+
+.round-top {
+    border-top-right-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
+}
+
+.bottom-1 {
+    margin-bottom: 1rem;
+}
+
 .bottom-2 {
     margin-bottom: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 5px !important;
 }
 
 .shadow {
@@ -167,6 +219,18 @@ img {
 .red {
     background-color: #FF146A;
     border-color: transparent;
+}
+
+.color-red {
+    color: #FF146A;
+}
+
+.color-black {
+    color: #1e1e1e !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .goto-content {
@@ -288,6 +352,27 @@ img {
     margin-bottom: 4rem;
 }
 
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 60px;
+    right: 16px;
+    background-color: #FF146A;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yellow {
+    color: #ebc54b;
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
     .column-4 {
         -ms-flex: 0 0 50%;
@@ -401,10 +486,54 @@ img {
     }
 }
 
+/* Review */
+
+  form {
+    margin: 2em 0;
+    padding: 1.5em;
+    border: 2px solid #ffbdd4;
+    border-radius: 0.5em;
+  }
+
+  .form-red {
+    background-color: #ffe8f0;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    min-height: 1em;
+    padding: 0.3em;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1em;
+    font-weight: normal;
+    color: #1e1e1e;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #ffbdd4;
+    appearance: none;
+    border-radius: 0.5em;
+  }
+  
+  .form-label {
+    padding-bottom: 8px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: small;
+    color: var(--secondary-color);
+  }
+
+  .btn-submit {
+      background-color: #ebc54b;
+      border-color: #ebc54b;
+      border-radius: 10px;
+      padding: 10px;
+
+  }
 
 /* Footer */
 
-.footer {
+  .footer {
     text-align: center;
     font-size: 0.9rem;
     background-image: linear-gradient(260deg, #FF146A 0%, #ebc54b 100%);
@@ -412,7 +541,7 @@ img {
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.padding-top-btm {
+  .padding-top-btm {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
