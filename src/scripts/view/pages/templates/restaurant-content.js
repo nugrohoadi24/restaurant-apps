@@ -24,32 +24,32 @@ const restaurantItemContent = (restaurants) => `
 
 const restaurantDetailContent = (restaurant) => `
   <div class="column-12 bottom-2">
-    <h2 class="section-heading text-capitalize text-center">
+    <h2 class="section-heading text-capitalize text-center" tabindex="0">
       ${restaurant.restaurant.name}
     </h2>
   </div>
 
   <div class="column-6">
-    <img class="movie__poster" 
+    <img tabindex="0"
       src="${CONFIG.BASE_IMAGE_URL + restaurant.restaurant.pictureId}" 
       alt="${restaurant.restaurant.name}" />
   </div>
 
   <div class="column-6">
-  <h3>Detail Restoran</h3>
-    <h4>Rating</h4>
-    <p><i class="fas fa-star yellow"></i>&nbsp;
+  <h3 tabindex="0">Detail Restoran</h3>
+    <h4 tabindex="0">Rating</h4>
+    <p tabindex="0"><i class="fas fa-star yellow"></i>&nbsp;
     ${restaurant.restaurant.rating}</p>
-    <h4>Kota</h4>
-      <p>
+    <h4 tabindex="0">Kota</h4>
+      <p tabindex="0">
         ${restaurant.restaurant.city}
       </p>
-    <h4>Alamat Lengkap</h4>
-      <p>
+    <h4 tabindex="0">Alamat Lengkap</h4>
+      <p tabindex="0">
         ${restaurant.restaurant.address}
       </p>
-    <h4>Kategori Menu</h4>
-      <p>
+    <h4 tabindex="0">Kategori Menu</h4>
+      <p tabindex="0">
       ${restaurant.restaurant.categories.map(
       (categories) =>`
         ${categories.name} 
@@ -59,67 +59,59 @@ const restaurantDetailContent = (restaurant) => `
   </div>
 
   <div class="column-12 top-2">
-    <h2>Deskripsi Restoran</h2>
-      <p>
+    <h2 tabindex="0">Deskripsi Restoran</h2>
+      <p tabindex="0">
         ${restaurant.restaurant.description}
       </p>
   </div>
 
   <div class="column-12 top-2">
-    <h2 class="section-heading text-capitalize">
+    <h2 class="section-heading text-capitalize" tabindex="0">
       Menu
     </h2>
   </div>
   <div class="column-6">
-    <h4>Minuman</h4>
+    <h4 tabindex="0">Minuman</h4>
     <ul>
       ${restaurant.restaurant.menus.drinks.map(
       (drinks) =>`
-      <li>${drinks.name}</li>
+      <li tabindex="0">${drinks.name}</li>
       `).
       join('')}
     </ul>
   </div>
   <div class="column-6">
-    <h4>Makanan</h4>
+    <h4 tabindex="0">Makanan</h4>
     <ul>
       ${restaurant.restaurant.menus.foods.map(
       (foods) =>`
-      <li>${foods.name}</li>
+      <li tabindex="0">${foods.name}</li>
       `).
       join('')}
     </ul>
   </div>
   
   <div class="column-12 top-2">
-    <h2 class="section-heading text-capitalize">
+    <h2 class="section-heading text-capitalize" tabindex="0">
       Review Restoran
     </h2>
   </div>
   <div class="column-12">
     ${restaurant.restaurant.customerReviews.map((customerReviews) =>`
-    <p class="top-1">${customerReviews.date}</p>
-    <h4 class="no-top color-red"><i title="restaurant" 
+    <p class="top-1" tabindex="0">${customerReviews.date}</p>
+    <h4 class="no-top color-red" tabindex="0"><i title="restaurant" 
       class="fa fa-user-circle color-black" style="font-size:1.3em;"></i>
       
       &nbsp;
       ${customerReviews.name}
     </h4>
-    <p>Review : ${customerReviews.review}</p>
+    <p tabindex="0">Review : ${customerReviews.review}</p>
 
 <div class=" border-bottom"></div>
     `).join('')}
   
   </div>
 `;
-
-// const categories = '';
-// restaurant.categories.forEach((categories) => {
-//   categories += `${categories.name}`;
-// });
-
-// console.log('data', categories);
-// categories.innerHTML = categories;
 
 const likeButtonContent = () => `
   <button aria-label="Tambahkan Favorit" id="likeButton" class="like">
