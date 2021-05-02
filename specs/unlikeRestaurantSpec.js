@@ -41,10 +41,10 @@ describe('Hapus Favorit Restoran', () => {
   it('Tidak membuat error jika restoran tidak di fav', async () => {
     await TestFactories.createFavoriteButtonPresenterWithRest({id: 1});
 
-    // hapus dulu film dari daftar film yang disukai
+    // hapus dulu restoran dari daftar restoran yang disukai
     await FavoriteRestaurantIdb.deleteRestaurant(1);
 
-    // kemudian, simulasikan pengguna menekan widget batal menyukai film
+    // kemudian, simulasikan pengguna menekan widget batal menyukai restoran
     document.querySelector('[aria-label="Hapus Favorit"]')
         .dispatchEvent(new Event('click'));
 

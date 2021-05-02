@@ -1,6 +1,6 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
-import {restaurantDetailContent}
+import {restaurantDetailContent, restaurantReviewContent}
   from './templates/restaurant-content';
 import API_ENDPOINT from '../../globals/api-endpoint';
 import CONFIG from '../../globals/config';
@@ -12,6 +12,7 @@ const DetailRestaurant = {
     return `
     <div class="box">
       <div class="row" id="detailRestaurant"></div>
+      <div class="row" id="reviewRestaurant"></div>
       <div class="form-review">
         <form class="form-red">
           <div class="bottom-1">
@@ -39,6 +40,9 @@ const DetailRestaurant = {
     const restaurant = await RestaurantSource.detailRestaurats(url.id);
     const restaurantContainer = document.querySelector('#detailRestaurant');
     restaurantContainer.innerHTML = restaurantDetailContent(restaurant);
+
+    const reviewContainer = document.querySelector('#reviewRestaurant');
+    reviewContainer.innerHTML = restaurantReviewContent(restaurant);
 
     FavoriteButtonPresenter.init({
       favoriteButtonContainer:
@@ -111,8 +115,8 @@ const DetailRestaurant = {
             `).join('')}
           `;
 
-        restaurantContainer.innerHTML = '';
-        restaurantContainer.innerHTML += newReview;
+        reviewContainer.innerHTML = '';
+        reviewContainer.innerHTML += newReview;
 
         nameInput.value = '';
         reviewInput.value = '';

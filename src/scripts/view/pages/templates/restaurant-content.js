@@ -24,30 +24,6 @@ const restaurantItemContent = (restaurants) => `
   </div>
 `;
 
-// const skeletonRestaurantItemTemplate = () => `
-//     <div class="column-4">
-//     <div class="card bottom-2">
-//         <img class="img-res" alt="Low Resolution Image"
-//           data-src="./images/heros/lowres-large.jpg"
-//           data-srcset="./images/heros/lowres-small.jpg 480w,
-//             ./images/heros/lowres-large.jpg 800w"
-//           sizes="(max-width: 600px) 480px, 800px" crossorigin="anonymous"/>
-//         <span class="card-title"><p>Title - City</p></span>
-//         <span class="card-rating">
-//           <i title="ratings" class="fa fa-star"></i>
-//           <span>5</span>
-//         </span>
-//       <div class="card-content">
-//           <p class="card-content-title">Description :</p>
-//           <p>
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//             Porro sequi ullam ad mollitia cupiditate aut iure officia,
-//             voluptate, sapiente modi quisquam est quod quas recusandae
-//             quo saepe atque nisi blanditiis.</p>
-//       </div>
-//     </div>
-// `;
-
 const restaurantDetailContent = (restaurant) => `
   <div class="column-12 bottom-2">
     <h2 class="section-heading text-capitalize text-center" tabindex="0">
@@ -118,31 +94,33 @@ const restaurantDetailContent = (restaurant) => `
       join('')}
     </ul>
   </div>
-  
+
   <div class="column-12 top-2">
-    <h2 class="section-heading text-capitalize" tabindex="0">
-      Review Restoran
-    </h2>
+  <h2 class="section-heading text-capitalize" tabindex="0">
+    Review Restoran
+  </h2>
   </div>
+`;
+
+const restaurantReviewContent = (restaurant) => `
   <div class="column-12">
-    ${restaurant.restaurant.customerReviews.map((customerReviews) =>`
-    <div class="review">
-      <p class="top-1" tabindex="0">${customerReviews.date}</p>
-      <h4 class="no-top color-red" tabindex="0"><span 
-        class="iconify color-black" 
-        data-icon="ph:user-circle-fill" 
-        data-inline="false" style="font-size:1.3em;"></span>
-        &nbsp;
-        ${customerReviews.name}
-      </h4>
-      <div class="text-review" tabindex="0">
-      Review : ${customerReviews.review}
-      </div>
-      <div class="border-bottom"></div>
+  ${restaurant.restaurant.customerReviews.map((customerReviews) =>`
+  <div class="review">
+    <p class="top-1" tabindex="0">${customerReviews.date}</p>
+    <h4 class="no-top color-red" tabindex="0"><span 
+      class="iconify color-black" 
+      data-icon="ph:user-circle-fill" 
+      data-inline="false" style="font-size:1.3em;"></span>
+      &nbsp;
+      ${customerReviews.name}
+    </h4>
+    <div class="text-review" tabindex="0">
+    Review : ${customerReviews.review}
     </div>
-    `)
-      .join('')}
-  
+    <div class="border-bottom"></div>
+  </div>
+  `)
+    .join('')}
   </div>
 `;
 
@@ -160,8 +138,8 @@ const likedButtonContent = () => `
 
 export {
   restaurantItemContent,
-  // skeletonRestaurantItemTemplate,
   restaurantDetailContent,
+  restaurantReviewContent,
   likeButtonContent,
   likedButtonContent,
 };

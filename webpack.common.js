@@ -5,8 +5,8 @@ const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-//     .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin;
 const path = require('path');
 
 module.exports = {
@@ -40,9 +40,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
-          // globOptions: {
-          //   ignore: ['**/images/**'],
-          // },
+          globOptions: {
+            ignore: ['**/images/**'],
+          },
         },
       ],
     }),
@@ -60,10 +60,10 @@ module.exports = {
         }),
       ],
     }),
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: 'disabled',
-    //   generateStatsFile: true,
-    //   statsOptions: {source: false},
-    // }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: true,
+      statsOptions: {source: false},
+    }),
   ],
 };

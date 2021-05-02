@@ -38,17 +38,17 @@ describe('Favorit Restoran', () => {
   it('Tidak menambahkan favorite jika sudah di tambahkan', async () => {
     await TestFactories.createFavoriteButtonPresenterWithRest({id: 1});
 
-    // Tambahkan film dengan ID 1 ke daftar film yang disukai
+    // Tambahkan restoran dengan ID 1 ke daftar restoran yang disukai
     await FavoriteRestaurantIdb.putRestaurant({id: 1});
-    // Simulasikan pengguna menekan tombol suka film
+    // Simulasikan pengguna menekan tombol suka restoran
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));
-    // tidak ada film yang ganda
+    // tidak ada restoran yang ganda
     expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([{id: 1}]);
 
     FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  it('Tidak dapat menambah film yang tidak memiliki id', async () => {
+  it('Tidak dapat menambah restoran yang tidak memiliki id', async () => {
     await TestFactories.createFavoriteButtonPresenterWithRest({});
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));

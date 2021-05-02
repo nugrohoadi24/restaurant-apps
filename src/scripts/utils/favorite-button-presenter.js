@@ -1,4 +1,3 @@
-// import FavoriteRestaurantIdb from '../data/favrestaurant-idb';
 import {likeButtonContent, likedButtonContent}
   from '../view/pages/templates/restaurant-content';
 

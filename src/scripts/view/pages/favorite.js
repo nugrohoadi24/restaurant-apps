@@ -29,10 +29,13 @@ const Favorite = {
 
     if (restaurants.length === 0) {
       restaurantsContainer.innerHTML = `
+      <div class="column-12">
         <div class="no-favorite-data">
           <img class="lazyload" src="images/not-found.png" 
-            alt="antar-kerumah" tabindex="0">
+            alt="daftar-favorit-kosong" tabindex="0">
+          <h3 class="no-top">Anda belum menambahkan kedalam daftar favorit!</h3>
         </div>
+      </div>
       `;
     }
     const totalRest = restaurants.length;
