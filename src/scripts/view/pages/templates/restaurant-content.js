@@ -120,7 +120,7 @@ const restaurantReviewContent = (restaurant) => `
     <div class="border-bottom"></div>
   </div>
   `)
-    .join('')}
+      .join('')}
   </div>
 `;
 
